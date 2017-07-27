@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -109,5 +111,23 @@ btnRead.setOnClickListener(new View.OnClickListener() {
 
         return true;
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        int current = vPager.getCurrentItem();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor prefEdit = prefs.edit();
+        prefEdit.putInt("current",current);
+        prefEdit.commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        int current = prefs.getInt("current",vPager.getCurrentItem());
+        vPager.setCurrentItem(current);
     }
 }

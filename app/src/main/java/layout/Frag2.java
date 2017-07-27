@@ -1,8 +1,10 @@
 package layout;
 
 
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +33,15 @@ public class Frag2 extends Fragment {
     }
 
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+        int colorsaved = prefs.getInt("colorrr",p.getColor());
+        linear1.setBackgroundColor(colorsaved);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -44,6 +55,10 @@ public class Frag2 extends Fragment {
                 color=new Random();
                 p.setARGB(255,color.nextInt(255),color.nextInt(255),color.nextInt(255));
                 linear1.setBackgroundColor((p.getColor()));
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+                SharedPreferences.Editor prefEdit = prefs.edit();
+                prefEdit.putInt("colorrr", p.getColor());
+                prefEdit.commit();
 
             }
         });
