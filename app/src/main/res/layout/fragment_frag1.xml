@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.Frag1">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The corridors are a total of 17.5 miles long,\n while the building provides a gross floor area of 6,500,000 square feet.\n There are 3,800,000 square feet for offices, concessions, and storage.\n The five-sided center courtyard covers five acres."/>
+        <Button
+            android:id="@+id/buttonChangeColour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change COlour" />
+    </LinearLayout>
+
+</FrameLayout>

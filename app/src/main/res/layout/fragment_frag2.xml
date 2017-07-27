@@ -1,0 +1,32 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.Frag2">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. If you somehow found a way to extract all of the gold from the bubbling core of our lovely little planet, you would be able to cover all of the land in a layer of gold up to your knees.
+2. McDonalds calls frequent buyers of their food “heavy users.”
+3. The average person spends 6 months of their lifetime waiting on a red light to turn green.
+4. The largest recorded snowflake was in Keogh, MT during year 1887, and was 15 inches wide.
+5. You burn more calories sleeping than you do watching television.
+"/>
+        <Button
+            android:id="@+id/buttonChangeColour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Colour" />
+
+    </LinearLayout>
+
+</FrameLayout>
